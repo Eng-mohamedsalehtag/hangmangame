@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main class="container">
+      <header>
+        <h1>Hangman Game</h1>
+        <div class="game-info">
+          <p>Category: <strong id="category">---</strong></p>
+          <p>Tries: <strong id="remaining-tries">6</strong></p>
+        </div>
+      </header>
+
+      <section class="main-game-content">
+        <div class="visual-section">
+          <div class="figure-wrapper">
+            <svg class="hangman-svg" viewBox="0 0 200 250">
+              <g stroke="#2c3e50" stroke-width="4" fill="none">
+                <line x1="20" y1="230" x2="100" y2="230" />
+                <line x1="60" y1="230" x2="60" y2="20" />
+                <line x1="60" y1="20" x2="140" y2="20" />
+                <line x1="140" y1="20" x2="140" y2="50" />
+              </g>
+              <g
+                class="body-parts"
+                stroke="#e74c3c"
+                stroke-width="4"
+                fill="none"
+              >
+                <circle cx="140" cy="70" r="20" class="part" id="head" />
+                <line
+                  x1="140"
+                  y1="90"
+                  x2="140"
+                  y2="150"
+                  class="part"
+                  id="body"
+                />
+                <line
+                  x1="140"
+                  y1="120"
+                  x2="110"
+                  y2="100"
+                  class="part"
+                  id="left-arm"
+                />
+                <line
+                  x1="140"
+                  y1="120"
+                  x2="170"
+                  y2="100"
+                  class="part"
+                  id="right-arm"
+                />
+                <line
+                  x1="140"
+                  y1="150"
+                  x2="120"
+                  y2="190"
+                  class="part"
+                  id="left-leg"
+                />
+                <line
+                  x1="140"
+                  y1="150"
+                  x2="160"
+                  y2="190"
+                  class="part"
+                  id="right-leg"
+                />
+              </g>
+            </svg>
+          </div>
+
+          <div class="word-container">
+            <div class="word-display" id="word-display"></div>
+            <div class="wrong-letters" id="wrong-letters-list"></div>
+          </div>
+        </div>
+
+        <aside class="controls-section">
+          <div class="keyboard" id="keyboard-container"></div>
+          <button id="reset-btn" class="btn-primary">New Word</button>
+          <a href="category.html">
+            <button class="btn-primary category">Change Category</button></a
+          >
+        </aside>
+      </section>
+
+      <dialog class="modal" id="game-modal">
+        <div class="modal-content">
+          <h2 id="final-status"></h2>
+          <p id="reveal-word"></p>
+          <button id="play-again-btn">Play Again</button>
+        </div>
+      </dialog>
+      <p class="alert">Already clicked letter</p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
